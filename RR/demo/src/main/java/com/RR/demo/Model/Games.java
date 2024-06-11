@@ -1,9 +1,6 @@
 package com.RR.demo.Model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,6 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Games {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private int id;
 
@@ -25,6 +23,6 @@ public class Games {
     @Column(name = "PLAYERS_AMOUNT")
     private int players_amount;
 
-    @Column
+    @Column(name = "GAME_STATUS")
     private int game_status;
 }
